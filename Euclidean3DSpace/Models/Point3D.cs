@@ -4,14 +4,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Euclidean3DSpace
+namespace Euclidean3DSpace.Models
 {
     struct Point3D
     {
-        //static void Main(string[] args)
-        //{
-        //}
-
         private decimal x;
         private decimal y;
         private decimal z;
