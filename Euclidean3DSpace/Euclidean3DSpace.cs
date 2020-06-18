@@ -11,7 +11,7 @@ namespace Euclidean3DSpace
     {
         static void Main(string[] args)
         {
-            
+            Point3D point3D = new Point3D();
         }
     }
 }

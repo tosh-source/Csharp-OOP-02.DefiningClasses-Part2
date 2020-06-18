@@ -28,7 +28,12 @@ namespace Euclidean3DSpace.Models
             set { this.z = value; }
         }
 
-
+        public Point3D(decimal x, decimal y, decimal z) :this()
+        {
+            this.X = x;
+            this.Y = y;
+            this.Z = z;
+        }
 
         public override string ToString()
         {
