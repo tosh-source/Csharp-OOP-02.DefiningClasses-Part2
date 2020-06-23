@@ -11,6 +11,7 @@ namespace Euclidean3DSpace.Models
         private decimal x;
         private decimal y;
         private decimal z;
+        private static readonly Point3D startCoordinate;
 
         public decimal X
         {
@@ -27,8 +28,19 @@ namespace Euclidean3DSpace.Models
             get { return this.z; }
             set { this.z = value; }
         }
+        public static Point3D StartCoordinate
+        {
+            get
+            {
+                return startCoordinate;
+            }
+        }
 
-        public Point3D(decimal x, decimal y, decimal z) :this()
+        static Point3D()
+        {
+            startCoordinate = new Point3D() { X = 0, Y = 0, Z = 0 };
+        }
+        public Point3D(decimal x, decimal y, decimal z) : this()
         {
             this.X = x;
             this.Y = y;
@@ -38,19 +50,7 @@ namespace Euclidean3DSpace.Models
         public override string ToString()
         {
             string result = string.Empty;
-
-            if (X != 0)
-            {
-                result += X.ToString() + Environment.NewLine;
-            }
-            if (Y != 0)
-            {
-                result += Y.ToString() + Environment.NewLine;
-            }
-            if (Z != 0)
-            {
-                result += Z.ToString() + Environment.NewLine;
-            }
+            result += string.Format("X:{0} Y:{1} Z:{2}", X, Y, Z);
 
             return result;
         }

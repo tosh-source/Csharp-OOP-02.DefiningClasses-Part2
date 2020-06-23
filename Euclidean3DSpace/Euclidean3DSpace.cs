@@ -11,7 +11,9 @@ namespace Euclidean3DSpace
     {
         static void Main(string[] args)
         {
-            Point3D point3D = new Point3D();
+            Point3D point3D = new Point3D() {X = 10, Y = 20, Z =  30};
+            Console.WriteLine(point3D);
+            Console.WriteLine(Point3D.StartCoordinate);
         }
     }
 }
