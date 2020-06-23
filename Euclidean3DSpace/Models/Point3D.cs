@@ -8,11 +8,18 @@ namespace Euclidean3DSpace.Models
 {
     struct Point3D
     {
+        private static readonly Point3D startCoordinate;
         private decimal x;
         private decimal y;
         private decimal z;
-        private static readonly Point3D startCoordinate;
 
+        public static Point3D StartCoordinate
+        {
+            get
+            {
+                return startCoordinate;
+            }
+        }
         public decimal X
         {
             get { return this.x; }
@@ -27,13 +34,6 @@ namespace Euclidean3DSpace.Models
         {
             get { return this.z; }
             set { this.z = value; }
-        }
-        public static Point3D StartCoordinate
-        {
-            get
-            {
-                return startCoordinate;
-            }
         }
 
         static Point3D()
