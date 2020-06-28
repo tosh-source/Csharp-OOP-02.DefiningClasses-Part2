@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Euclidean3DSpace.Models
 {
-    struct Point3D
+    public struct Point3D
     {
         private static readonly Point3D startCoordinate;
         private decimal x;
