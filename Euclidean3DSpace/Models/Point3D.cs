@@ -9,9 +9,9 @@ namespace Euclidean3DSpace.Models
     public struct Point3D
     {
         private static readonly Point3D startCoordinate;
-        private decimal x;
-        private decimal y;
-        private decimal z;
+        private double x;
+        private double y;
+        private double z;
 
         public static Point3D StartCoordinate
         {
@@ -20,17 +20,17 @@ namespace Euclidean3DSpace.Models
                 return startCoordinate;
             }
         }
-        public decimal X
+        public double X
         {
             get { return this.x; }
             set { this.x = value; }
         }
-        public decimal Y
+        public double Y
         {
             get { return this.y; }
             set { this.y = value; }
         }
-        public decimal Z
+        public double Z
         {
             get { return this.z; }
             set { this.z = value; }
@@ -40,7 +40,7 @@ namespace Euclidean3DSpace.Models
         {
             startCoordinate = new Point3D() { X = 0, Y = 0, Z = 0 };
         }
-        public Point3D(decimal x, decimal y, decimal z) : this()
+        public Point3D(double x, double y, double z) : this()
         {
             this.X = x;
             this.Y = y;

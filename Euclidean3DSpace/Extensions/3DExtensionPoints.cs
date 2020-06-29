@@ -9,11 +9,13 @@ namespace Euclidean3DSpace.Extensions
 {
     public static class ExtensionPointsOf3DSpace
     {
-        public static decimal CalculateDistance(Point3D firstPoint, Point3D secondPoint)
+        public static double CalculateDistance(Point3D firstPoint, Point3D secondPoint)
         {
+            double distance = 0d;
 
 
-            return 0m;
+
+            return distance;
         }
     }
 }
