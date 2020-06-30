@@ -17,6 +17,10 @@ namespace Euclidean3DSpace
             Console.WriteLine(Point3D.StartCoordinate);
             Console.WriteLine(ExtensionPointsOf3DSpace.CalculateDistance(point3D, Point3D.StartCoordinate));
 
+            Path points = new Path();
+            points.AddPoint(point3D);
+            points.AddPoint(Point3D.StartCoordinate);
+
         }
     }
 }

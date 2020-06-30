@@ -1,12 +1,23 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Collections.Generic;
 
 namespace Euclidean3DSpace.Models
 {
-    class Path
+    public class Path
     {
+        private ICollection<Point3D> points;
+
+        public void AddPoint(Point3D point)
+        {
+            this.points.Add(point);
+        }
+        public void RemovePoint(Point3D point)
+        {
+            this.points.Remove(point);
+        }
+
+        public Path()
+        {
+            this.points = new List<Point3D>();
+        }
     }
 }
