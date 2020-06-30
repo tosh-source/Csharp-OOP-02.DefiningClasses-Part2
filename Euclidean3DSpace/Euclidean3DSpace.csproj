@@ -45,6 +45,7 @@
   <ItemGroup>
     <Compile Include="Euclidean3DSpace.cs" />
     <Compile Include="Extensions\3DExtensionPoints.cs" />
+    <Compile Include="Models\Path.cs" />
     <Compile Include="Models\Point3D.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
