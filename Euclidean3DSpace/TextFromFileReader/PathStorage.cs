@@ -12,9 +12,9 @@ namespace Euclidean3DSpace.TextFromFileReader
     {
         private static string textFromFile;
 
-        public static void LoadPath(string fileReader)
+        public static void LoadPath(string filePath)
         {
-            var reader = new StreamReader(fileReader);
+            var reader = new StreamReader(filePath);
             textFromFile = reader.ReadToEnd();
             reader.Close();
         }
