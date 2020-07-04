@@ -14,7 +14,7 @@ namespace Euclidean3DSpace.TextFromFileReader
 
         public static void LoadPath(string filePath)
         {
-            var reader = new StreamReader(filePath);
+            var reader = new StreamReader(filePath, Encoding.UTF8);
             textFromFile = reader.ReadToEnd();
             reader.Close();
         }
