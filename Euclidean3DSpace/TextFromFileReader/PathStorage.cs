@@ -31,6 +31,7 @@ namespace Euclidean3DSpace.TextFromFileReader
                 using (var reader = new StreamReader(filePath, Encoding.UTF8))
                 {
                     textFromFile = reader.ReadToEnd();
+
                 }
             }
             catch (FileNotFoundException)
@@ -46,9 +47,20 @@ namespace Euclidean3DSpace.TextFromFileReader
                 Console.WriteLine("The file can't be accessed, parsed or do not exist!");
             }
         }
-        public static void SafePath()
+        public static void SafePath(string safeToFilePath)
         {
+            try
+            {
+                using (var writer = new StreamWriter(safeToFilePath, false, Encoding.UTF8)
+                {
 
+                }
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
         }
     }
 }
