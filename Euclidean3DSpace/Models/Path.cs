@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System.Collections;
+using System.Collections.Generic;
 
 namespace Euclidean3DSpace.Models
 {
@@ -19,5 +20,12 @@ namespace Euclidean3DSpace.Models
         {
             this.points = new List<Point3D>();
         }
+
+        //Implement IEnumerable interface **
+        public IEnumerator GetEnumerator()
+        {
+            return (IEnumerator)this;
+        }
     }
 }
+//** link-> https://support.microsoft.com/en-us/help/322022/how-to-make-a-visual-c-class-usable-in-a-foreach-statement

@@ -47,19 +47,21 @@ namespace Euclidean3DSpace.TextFromFileReader
                 Console.WriteLine("The file can't be accessed, parsed or do not exist!");
             }
         }
-        public static void SafePath(string safeToFilePath)
+        public static void SafePath(string safeToFilePath, Models.Path paths)
         {
             try
             {
-                using (var writer = new StreamWriter(safeToFilePath, false, Encoding.UTF8)
+                using (var writer = new StreamWriter(safeToFilePath, false, Encoding.UTF8))
                 {
+                    foreach (var item in paths)
+                    {
 
+                    }
                 }
             }
             catch (Exception)
             {
-
-                throw;
+                Console.WriteLine("");               
             }
         }
     }

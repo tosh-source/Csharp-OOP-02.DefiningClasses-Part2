@@ -20,7 +20,7 @@ namespace Euclidean3DSpace
             Path points = new Path();
             points.AddPoint(point3D);
             points.AddPoint(Point3D.StartCoordinate);
-
+            points.AddPoint(new Point3D { X = 3, Y = 3, Z = 3 });
         }
     }
 }
