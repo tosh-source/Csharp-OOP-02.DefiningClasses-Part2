@@ -24,7 +24,7 @@ namespace Euclidean3DSpace.Models
         //Implement IEnumerable interface **
         public IEnumerator GetEnumerator()
         {
-            return (IEnumerator)this;
+            return (IEnumerator)this.points.GetEnumerator();
         }
     }
 }

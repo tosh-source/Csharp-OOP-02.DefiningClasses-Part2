@@ -21,6 +21,10 @@ namespace Euclidean3DSpace
             points.AddPoint(point3D);
             points.AddPoint(Point3D.StartCoordinate);
             points.AddPoint(new Point3D { X = 3, Y = 3, Z = 3 });
+            foreach (var item in points)
+            {
+                Console.WriteLine(item);
+            }
         }
     }
 }
