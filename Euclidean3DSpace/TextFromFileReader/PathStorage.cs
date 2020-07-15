@@ -10,29 +10,30 @@ namespace Euclidean3DSpace.TextFromFileReader
 {
     public static class PathStorage
     {
-        private static string textFromFile;
-        private static string textToFile;
-
-        public static string TextFromFile
-        {
-            get { return textFromFile; }
-            set { textFromFile = value; }
-        }
-        public static string TextToFile
-        {
-            get { return textToFile; }
-            set { textToFile = value; }
-        }
-
         public static void LoadPath(string filePath)
         {
             try
             {
+                Models.Path paths = new Models.Path();
+                //var textFromFile = new StringBuilder();
+
                 using (var reader = new StreamReader(filePath, Encoding.UTF8))
                 {
-                    textFromFile = reader.ReadToEnd();
+                    while (reader != null)
+                    {
+                        //textFromFile.Append(reader.ReadLine());
+                        double[] currentCoordinates = reader.ReadLine()
+                            .Split(new string[] { "X = ", ",", "Y = ", ",", "Z = " }, StringSplitOptions.RemoveEmptyEntries)
+                            .Select(double.Parse).ToArray();
 
+                    }
                 }
+
+                //for (int index = 0; index < textFromFile.Length; index++)
+                //{
+                //    paths.AddPoint(textFromFile[index]);
+                //}
+
             }
             catch (FileNotFoundException)
             {
