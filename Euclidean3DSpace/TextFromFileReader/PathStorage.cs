@@ -14,8 +14,7 @@ namespace Euclidean3DSpace.TextFromFileReader
         {
             try
             {
-                Models.Path paths = new Models.Path();
-                //List<List<double>> coordinates = 
+                Models.Path collectionOfPoints = new Models.Path(); 
 
                 using (var reader = new StreamReader(filePath, Encoding.UTF8))
                 {
