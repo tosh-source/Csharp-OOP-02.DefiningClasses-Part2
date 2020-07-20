@@ -22,7 +22,7 @@ namespace Euclidean3DSpace.TextFromFileReader
                     {
                         //textFromFile.Append(reader.ReadLine());
                         string[] splitText = reader.ReadLine()
-                                                   .Split(new string[] { "X = ", ",", "Y = ", ",", "Z = " }, StringSplitOptions.RemoveEmptyEntries)
+                                                   .Split(new string[] { "X = ", ",", " ", "Y = ", ",", "Z = " }, StringSplitOptions.RemoveEmptyEntries)
                                                    .ToArray();
 
                         for (int index = 0; index <= splitText.Length -1; index++)
