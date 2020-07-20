@@ -15,17 +15,21 @@ namespace Euclidean3DSpace.TextFromFileReader
             try
             {
                 Models.Path paths = new Models.Path();
-                //var textFromFile = new StringBuilder();
+                //List<List<double>> coordinates = 
 
                 using (var reader = new StreamReader(filePath, Encoding.UTF8))
                 {
                     while (reader != null)
                     {
                         //textFromFile.Append(reader.ReadLine());
-                        double[] currentCoordinates = reader.ReadLine()
-                            .Split(new string[] { "X = ", ",", "Y = ", ",", "Z = " }, StringSplitOptions.RemoveEmptyEntries)
-                            .Select(double.Parse).ToArray();
+                        string[] splitText = reader.ReadLine()
+                                                   .Split(new string[] { "X = ", ",", "Y = ", ",", "Z = " }, StringSplitOptions.RemoveEmptyEntries)
+                                                   .ToArray();
 
+                        for (int index = 0; index <= splitText.Length -1; index++)
+                        {
+
+                        }
                     }
                 }
 
