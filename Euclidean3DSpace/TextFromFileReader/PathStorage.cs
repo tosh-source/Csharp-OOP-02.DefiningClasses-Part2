@@ -14,7 +14,7 @@ namespace Euclidean3DSpace.TextFromFileReader
         {
             try
             {
-                Models.Path collectionOfPoints = new Models.Path(); 
+                Models.Path collectionOfPoints = new Models.Path();
 
                 using (var reader = new StreamReader(filePath, Encoding.UTF8))
                 {
@@ -25,10 +25,17 @@ namespace Euclidean3DSpace.TextFromFileReader
                                                    .Split(new string[] { "X = ", ",", " ", "Y = ", ",", "Z = " }, StringSplitOptions.RemoveEmptyEntries)
                                                    .ToArray();
 
-                        for (int index = 0; index <= splitText.Length -1; index++)
+                        double[] XYZ_points = new double[3];
+                        for (int index = 0; index <= splitText.Length - 1; index++)
                         {
+                            if (double.TryParse(splitText[index], out XYZ_points[index]))  //IndexOutOfRangeException
+                            {
 
+                            }
                         }
+
+                        Point3D currentPoint = new Point3D();
+                        collectionOfPoints.AddPoint(currentPoint);
                     }
                 }
 
@@ -45,6 +52,10 @@ namespace Euclidean3DSpace.TextFromFileReader
             catch (DirectoryNotFoundException)
             {
                 Console.WriteLine("Wrong directory path!");
+            }
+            catch (IndexOutOfRangeException)
+            {
+                Console.WriteLine("More than three numbers/points are detected!");
             }
             catch (Exception)
             {
