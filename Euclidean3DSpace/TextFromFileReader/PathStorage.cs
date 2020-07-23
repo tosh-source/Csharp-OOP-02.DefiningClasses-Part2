@@ -11,7 +11,7 @@ namespace Euclidean3DSpace.TextFromFileReader
     public static class PathStorage
     {
         public static void LoadPath(string filePath)
-        {
+        { //Method can read Point3D in format "X = 1, Y = 2, Z = 3". There is no limit how many Point3D can be read as collection (Models.Path). Every Point3D need to be in NEW line!
             try
             {
                 Models.Path collectionOfPoints = new Models.Path();
