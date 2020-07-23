@@ -28,22 +28,13 @@ namespace Euclidean3DSpace.TextFromFileReader
                         double[] XYZ_points = new double[3];
                         for (int index = 0; index <= splitText.Length - 1; index++)
                         {
-                            if (double.TryParse(splitText[index], out XYZ_points[index]))  //IndexOutOfRangeException
-                            {
-
-                            }
+                            XYZ_points[index] = double.Parse(splitText[index]);  //if more than three doubles, IndexOutOfRangeException
                         }
 
-                        Point3D currentPoint = new Point3D();
+                        Point3D currentPoint = new Point3D(XYZ_points[0], XYZ_points[1], XYZ_points[2]);
                         collectionOfPoints.AddPoint(currentPoint);
                     }
                 }
-
-                //for (int index = 0; index < textFromFile.Length; index++)
-                //{
-                //    paths.AddPoint(textFromFile[index]);
-                //}
-
             }
             catch (FileNotFoundException)
             {
@@ -57,9 +48,13 @@ namespace Euclidean3DSpace.TextFromFileReader
             {
                 Console.WriteLine("More than three numbers/points are detected!");
             }
-            catch (Exception)
+            catch (FormatException)
             {
-                Console.WriteLine("The file can't be accessed, parsed or do not exist!");
+                Console.WriteLine("Not correct numeric value");
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("The file can't be accessed, parsed or do not exist! " + ex.Message);
             }
         }
         public static void SafePath(string safeToFilePath, Models.Path paths)
