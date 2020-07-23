@@ -20,7 +20,6 @@ namespace Euclidean3DSpace.TextFromFileReader
                 {
                     while (reader != null)
                     {
-                        //textFromFile.Append(reader.ReadLine());
                         string[] splitText = reader.ReadLine()
                                                    .Split(new string[] { "X = ", ",", " ", "Y = ", ",", "Z = " }, StringSplitOptions.RemoveEmptyEntries)
                                                    .ToArray();
