@@ -10,12 +10,12 @@ namespace Euclidean3DSpace.TextFromFileReader
 {
     public static class PathStorage
     {
-        public static void LoadPath(string filePath)
+        public static Models.Path LoadPath(string filePath)
         { //Method can read Point3D in format "X = 1, Y = 2, Z = 3". There is no limit how many Point3D can be read as collection (Models.Path). Every Point3D need to be in NEW line!
+
+            Models.Path collectionOfPoints = new Models.Path();
             try
             {
-                Models.Path collectionOfPoints = new Models.Path();
-
                 using (var reader = new StreamReader(filePath, Encoding.UTF8))
                 {
                     while (reader != null)
@@ -55,6 +55,8 @@ namespace Euclidean3DSpace.TextFromFileReader
             {
                 Console.WriteLine("The file can't be accessed, parsed or do not exist! " + ex.Message);
             }
+
+            return collectionOfPoints;
         }
         public static void SafePath(string safeToFilePath, Models.Path paths)
         {
