@@ -62,17 +62,25 @@ namespace Euclidean3DSpace.TextFromFileReader
         {
             try
             {
-                using (var writer = new StreamWriter(safeToFilePath, false, Encoding.UTF8))
+                using (var writer = new StreamWriter(safeToFilePath, false, Encoding.UTF8))  //if safeToFilePath is null, ArgumentNullException
                 {
-                    foreach (var currentPoint in collectionOfPoints)
+                    foreach (var currentPoint in collectionOfPoints)  //if collectionOfPoints is null, NullReferenceException
                     {
                         writer.WriteLine(currentPoint.ToString());
                     }
                 }
             }
+            catch (ArgumentNullException)
+            {
+                Console.WriteLine("SafeToFilePath is NULL!");
+            }
+            catch (NullReferenceException)
+            {
+                Console.WriteLine("CollectionOfPoints is NULL!");
+            }
             catch (Exception)
             {
-                Console.WriteLine("");               
+                Console.WriteLine("The file can't be created!");
             }
         }
     }
