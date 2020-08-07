@@ -31,9 +31,8 @@ namespace Euclidean3DSpace
             }
 
             //Test file reader & writer
-            //PathStorage.SafePath();
+            PathStorage.SafePath(points);
             #endregion
-
 
 
         }
