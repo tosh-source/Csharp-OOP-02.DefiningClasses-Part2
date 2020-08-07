@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using Euclidean3DSpace.Models;
 using Euclidean3DSpace.Extensions;
-using Euclidean3DSpace.TextFromFileReader;
+using Euclidean3DSpace.FileProcessing;
 
 namespace Euclidean3DSpace
 {

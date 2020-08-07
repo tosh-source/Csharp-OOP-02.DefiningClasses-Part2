@@ -6,7 +6,7 @@ using System.Text;
 using System.Threading.Tasks;
 using Euclidean3DSpace.Models;
 
-namespace Euclidean3DSpace.TextFromFileReader
+namespace Euclidean3DSpace.FileProcessing
 {
     public static class PathStorage
     {
