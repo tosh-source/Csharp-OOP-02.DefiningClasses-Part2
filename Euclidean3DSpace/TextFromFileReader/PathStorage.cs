@@ -58,11 +58,12 @@ namespace Euclidean3DSpace.TextFromFileReader
 
             return collectionOfPoints;
         }
-        public static void SafePath(string safeToFilePath, Models.Path collectionOfPoints)
+
+        public static void SafePath(string directory, string fileName, Models.Path collectionOfPoints)
         {
             try
             {
-                using (var writer = new StreamWriter(safeToFilePath, false, Encoding.UTF8))  //if safeToFilePath is null, ArgumentNullException
+                using (var writer = new StreamWriter((directory + fileName), false, Encoding.UTF8))  //if safeToFilePath is null, ArgumentNullException
                 {
                     foreach (var currentPoint in collectionOfPoints)  //if collectionOfPoints is null, NullReferenceException
                     {
