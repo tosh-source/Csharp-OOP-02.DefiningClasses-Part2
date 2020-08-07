@@ -59,7 +59,7 @@ namespace Euclidean3DSpace.TextFromFileReader
             return collectionOfPoints;
         }
 
-        public static void SafePath(string directory, string fileName, Models.Path collectionOfPoints)
+        public static void SafePath(Models.Path collectionOfPoints, string directory = "", string fileName = "CollectionOfPoints.txt")
         {
             try
             {
