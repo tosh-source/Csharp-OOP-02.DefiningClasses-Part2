@@ -32,6 +32,8 @@ namespace Euclidean3DSpace
 
             //Test file reader & writer
             PathStorage.SafePath(points);
+            Path newPointsFromFile = PathStorage.LoadPath(fileName: "CollectionOfPoints.txt");
+            //Console.WriteLine(newPointsFromFile);
             #endregion
 
 

@@ -10,18 +10,20 @@ namespace Euclidean3DSpace.FileProcessing
 {
     public static class PathStorage
     {
-        public static Models.Path LoadPath(string filePath)
+        public static Models.Path LoadPath(string directory = "", string fileName = "CollectionOfPoints.txt")  //When skip Directory as parameter, the default empty string will use current EXE working directory.
         { //Method can read Point3D in format "X = 1, Y = 2, Z = 3". There is no limit how many Point3D can be read as collection (Models.Path). Every Point3D need to be in NEW line!
 
             Models.Path collectionOfPoints = new Models.Path();
             try
             {
-                using (var reader = new StreamReader(filePath, Encoding.UTF8))
+                using (var reader = new StreamReader((directory + fileName), Encoding.UTF8))
                 {
                     while (reader != null)
                     {
                         string[] splitText = reader.ReadLine()
-                                                   .Split(new string[] { "X = ", ",", " ", "Y = ", ",", "Z = " }, StringSplitOptions.RemoveEmptyEntries)
+                                                   .Split(new string[] { "X = ", ",", " ", "Y = ", ",", "Z = ",
+                                                                         "X:", "X: ", "Y:", "Y: ", "Z:", "Z: " }, 
+                                                                         StringSplitOptions.RemoveEmptyEntries)
                                                    .ToArray();
 
                         double[] XYZ_points = new double[3];
@@ -49,7 +51,7 @@ namespace Euclidean3DSpace.FileProcessing
             }
             catch (FormatException)
             {
-                Console.WriteLine("Not correct numeric value");
+                Console.WriteLine("Not correct numeric value!");
             }
             catch (Exception ex)
             {
