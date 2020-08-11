@@ -11,7 +11,7 @@ namespace Euclidean3DSpace.FileProcessing
     public static class PathStorage
     {
         public static Models.Path LoadPath(string directory = "", string fileName = "CollectionOfPoints.txt")  //When skip Directory as parameter, the default empty string will use current EXE working directory.
-        { //Method can read Point3D in format "X = 1, Y = 2, Z = 3". There is no limit how many Point3D can be read as collection (Models.Path). Every Point3D need to be in NEW line!
+        { //Method can read Point3D in format "X = 1, Y = 2, Z = 3" or "X:1 Y:2 Z:3". There is no limit how many Point3D can be read as collection (Models.Path). Every Point3D need to be in NEW line!
 
             Models.Path collectionOfPoints = new Models.Path();
             try
@@ -23,7 +23,7 @@ namespace Euclidean3DSpace.FileProcessing
                     while ((currentLine = reader.ReadLine()) != null)
                     {
                         string[] splitText = currentLine.Split(new string[] {
-                                                                "X = ", ",", " ", "Y = ", ",", "Z = ",
+                                                                "X = ", ",", " ", "Y = ", "Z = ",
                                                                 "X:", "X: ", "Y:", "Y: ", "Z:", "Z: " }, 
                                                                 StringSplitOptions.RemoveEmptyEntries)
                                                                 .ToArray();
