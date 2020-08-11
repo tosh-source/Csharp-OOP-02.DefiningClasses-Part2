@@ -18,13 +18,15 @@ namespace Euclidean3DSpace.FileProcessing
             {
                 using (var reader = new StreamReader((directory + fileName), Encoding.UTF8))
                 {
-                    while (reader != null)
+                    string currentLine;
+
+                    while ((currentLine = reader.ReadLine()) != null)
                     {
-                        string[] splitText = reader.ReadLine()
-                                                   .Split(new string[] { "X = ", ",", " ", "Y = ", ",", "Z = ",
-                                                                         "X:", "X: ", "Y:", "Y: ", "Z:", "Z: " }, 
-                                                                         StringSplitOptions.RemoveEmptyEntries)
-                                                   .ToArray();
+                        string[] splitText = currentLine.Split(new string[] {
+                                                                "X = ", ",", " ", "Y = ", ",", "Z = ",
+                                                                "X:", "X: ", "Y:", "Y: ", "Z:", "Z: " }, 
+                                                                StringSplitOptions.RemoveEmptyEntries)
+                                                                .ToArray();
 
                         double[] XYZ_points = new double[3];
                         for (int index = 0; index <= splitText.Length - 1; index++)
