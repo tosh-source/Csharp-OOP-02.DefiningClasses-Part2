@@ -6,7 +6,20 @@ using System.Threading.Tasks;
 
 namespace GenericClasses.Models
 {
-    class GenericList
+    class GenericList<T>
     {
+        private T[] elements;
+
+        public T[] Elements
+        {
+            get { return this.elements; }
+
+            private set { this.elements = value; }
+        }
+
+        public GenericList(int elementsCapacity)
+        {
+            this.Elements = new T[elementsCapacity];
+        }
     }
 }
