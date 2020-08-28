@@ -9,6 +9,7 @@ namespace GenericClasses.Models
     class GenericList<T>
     {
         private T[] elements;
+        private int currentPosition = 0;
 
         public T[] Elements
         {
@@ -20,6 +21,12 @@ namespace GenericClasses.Models
         public GenericList(int elementsCapacity)
         {
             this.Elements = new T[elementsCapacity];
+        }
+
+        public void Add(T elements)
+        {
+            this.Elements[currentPosition] = elements;
+            currentPosition++;
         }
     }
 }
