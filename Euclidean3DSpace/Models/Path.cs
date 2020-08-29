@@ -29,3 +29,4 @@ namespace Euclidean3DSpace.Models
     }
 }
 //** link-> https://support.microsoft.com/en-us/help/322022/how-to-make-a-visual-c-class-usable-in-a-foreach-statement
+//** виж видеото на Дончо -> "Дефиниране На Класове - Част 2 - 12 Март 2015 (Дончо)" -> ВРЕМЕ 1:44:10
