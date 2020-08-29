@@ -29,6 +29,11 @@ namespace GenericClasses.Models
             currentPosition++;
         }
 
+        public void Remove(int index)  //Remove element by given index.
+        {
+            this.Elements[index] = default(T);  //Get default value for current T element (depend on current T instance: int, string, Point3D and so on).
+        }
+
         public T this[int index]
         {
             get
