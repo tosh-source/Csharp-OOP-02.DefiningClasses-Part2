@@ -34,6 +34,11 @@ namespace GenericClasses.Models
             this.Elements[index] = default(T);  //Get default value for current T element (depend on current T instance: int, string, Point3D and so on).
         }
 
+        public void Insert(T element, int index)
+        {
+            
+        }
+
         public T this[int index]
         {
             get
