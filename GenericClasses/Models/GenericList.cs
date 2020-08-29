@@ -28,5 +28,22 @@ namespace GenericClasses.Models
             this.Elements[currentPosition] = elements;
             currentPosition++;
         }
+
+        public T this[int index]
+        {
+            get
+            {
+                if (index > Elements.Length - 1)
+                {
+                    throw new IndexOutOfRangeException();
+                }
+
+                return Elements[index];
+            }
+            private set
+            {
+                this.Elements[index] = value;
+            }
+        }
     }
 }
