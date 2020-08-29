@@ -36,14 +36,22 @@ namespace GenericClasses.Models
 
         public void Insert(T element, int index)
         {
-            
+            if (index <= this.Elements.Length - 1)
+            {
+                //var tempElement = ;
+                //Array.Copy();
+            }
+            else
+            {
+                throw new ArgumentOutOfRangeException();
+            }
         }
 
         public T this[int index]
         {
             get
             {
-                if (index > Elements.Length - 1)
+                if (index > this.Elements.Length - 1)
                 {
                     throw new IndexOutOfRangeException();
                 }
