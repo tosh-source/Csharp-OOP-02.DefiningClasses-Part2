@@ -35,19 +35,20 @@ namespace GenericClasses.Models
             this.Elements[index] = default(T);  //Get default value for current T element (depend on current T instance: int, string, Point3D and so on).
         }
 
-        public void Insert(T element, int index)
+        public void Insert(T elementToInsert, int index)
         {
             if (index <= this.Elements.Length - 1)
             {
-                //var tempElement = element;
-                //var firstTempArrOfElements;
+                var tempArrOfElements = new T[Elements.Length];
 
-                //foreach (var currentElement in Elements)
-                //{
+                foreach (var firstPartOfElements in Elements)
+                {
 
-                //}
+                }
+                foreach (var secondPartOfElements in Elements)
+                {
 
-                //Array.Copy();
+                }
             }
             else
             {
