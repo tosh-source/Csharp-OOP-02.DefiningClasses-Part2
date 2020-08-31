@@ -41,11 +41,18 @@ namespace GenericClasses.Models
             {
                 var tempArrOfElements = new T[Elements.Length];
 
-                foreach (var firstPartOfElements in Elements)
+                //1.Copy first part of array.
+                int pivot = Elements.Length - Elements.Length - index - 1;
+                for (int firstPartOfElements = 0; firstPartOfElements < pivot; firstPartOfElements++)
                 {
 
                 }
-                foreach (var secondPartOfElements in Elements)
+
+                //2.Copy the element to insert.
+                tempArrOfElements[index] = elementToInsert;
+
+                //3.Copy second part of array.
+                for (int secondPartOfElements = Elements.Length - 1; secondPartOfElements >= 0; secondPartOfElements--)
                 {
 
                 }
