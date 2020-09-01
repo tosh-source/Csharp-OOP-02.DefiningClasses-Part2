@@ -42,8 +42,7 @@ namespace GenericClasses.Models
                 var tempArrOfElements = new T[Elements.Length];
 
                 //1.Copy first part of array.
-                int pivot = Elements.Length - Elements.Length - startIndex;
-                for (int firstPartOfElements = 0; firstPartOfElements <= pivot; firstPartOfElements++)
+                for (int firstPartOfElements = 0; firstPartOfElements < startIndex; firstPartOfElements++)
                 {
 
                 }
@@ -52,7 +51,7 @@ namespace GenericClasses.Models
                 tempArrOfElements[startIndex] = elementToInsert;
 
                 //3.Copy second part of array.
-                for (int secondPartOfElements = Elements.Length - 1; secondPartOfElements >= 0; secondPartOfElements--)
+                for (int secondPartOfElements = Elements.Length - 1; secondPartOfElements > startIndex; secondPartOfElements--)
                 {
 
                 }
