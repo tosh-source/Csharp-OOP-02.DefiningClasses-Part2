@@ -64,6 +64,14 @@ namespace GenericClasses.Models
             }
         }
 
+        public void Clearing()
+        {
+            for (int index = 0; index <= Elements.Length - 1; index++)
+            {
+                this.Elements[index] = default(T);  //Get default value for current T element (depend on current T instance: int, string, Point3D and so on).
+            }
+        }
+
         public IEnumerator<T> GetEnumerator()
         {
             return ((IEnumerable<T>)Elements).GetEnumerator();
