@@ -59,6 +59,8 @@ namespace GenericClasses.Models
                 {
                     tempArrOfElements[secondPartOfElements + 1] = Elements[secondPartOfElements];
                 }
+
+                this.Elements = tempArrOfElements;
             }
         }
 
