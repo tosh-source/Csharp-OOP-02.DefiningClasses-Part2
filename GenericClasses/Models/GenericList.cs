@@ -39,7 +39,7 @@ namespace GenericClasses.Models
         {
             if (startIndex < 0 || startIndex > this.Elements.Length - 1)
             {
-                throw new ArgumentOutOfRangeException();
+                throw new IndexOutOfRangeException();
             }
             else
             {
