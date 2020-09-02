@@ -76,7 +76,7 @@ namespace GenericClasses.Models
         {
             get
             {
-                if (index > this.Elements.Length - 1)
+                if (index < 0 || index > this.Elements.Length - 1)
                 {
                     throw new IndexOutOfRangeException();
                 }
