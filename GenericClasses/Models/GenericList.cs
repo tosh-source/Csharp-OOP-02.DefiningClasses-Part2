@@ -43,12 +43,12 @@ namespace GenericClasses.Models
             }
             else
             {
-                var tempArrOfElements = new T[Elements.Length];
+                var tempArrOfElements = new T[Elements.Length + 1]; //New Array of Elements need to be bigger than initial array of Elements with ONE.
 
                 //1.Copy first part of array.
                 for (int firstPartOfElements = 0; firstPartOfElements < startIndex; firstPartOfElements++)
                 {
-
+                    tempArrOfElements[firstPartOfElements] = Elements[firstPartOfElements];
                 }
 
                 //2.Copy the element to insert.
@@ -57,7 +57,7 @@ namespace GenericClasses.Models
                 //3.Copy second part of array.
                 for (int secondPartOfElements = Elements.Length - 1; secondPartOfElements > startIndex; secondPartOfElements--)
                 {
-
+                    tempArrOfElements[secondPartOfElements + 1] = Elements[secondPartOfElements];
                 }
             }
         }
