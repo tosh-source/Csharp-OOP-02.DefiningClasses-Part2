@@ -37,7 +37,11 @@ namespace GenericClasses.Models
 
         public void Insert(T elementToInsert, int startIndex)
         {
-            if (startIndex <= this.Elements.Length - 1)
+            if (startIndex < 0 || startIndex > this.Elements.Length - 1)
+            {
+                throw new ArgumentOutOfRangeException();
+            }
+            else
             {
                 var tempArrOfElements = new T[Elements.Length];
 
@@ -55,10 +59,6 @@ namespace GenericClasses.Models
                 {
 
                 }
-            }
-            else
-            {
-                throw new ArgumentOutOfRangeException();
             }
         }
 
