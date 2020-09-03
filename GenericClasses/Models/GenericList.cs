@@ -70,6 +70,8 @@ namespace GenericClasses.Models
             {
                 this.Elements[index] = default(T);  //Get default value for current T element (depend on current T instance: int, string, Point3D and so on).
             }
+
+            //this.Elements = new T[this.Elements.Length];  //Above loop can be replaced with this code.
         }
 
         public void FindingElement(T element)
