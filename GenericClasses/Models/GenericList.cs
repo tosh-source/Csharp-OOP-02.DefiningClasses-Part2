@@ -72,7 +72,7 @@ namespace GenericClasses.Models
             }
         }
 
-        public void FindingElement(int index)
+        public void FindingElement(T element)
         {
 
         }
@@ -102,6 +102,11 @@ namespace GenericClasses.Models
             {
                 this.Elements[index] = value;
             }
+        }
+
+        public override string ToString()
+        {
+            return base.ToString();
         }
     }
 }
