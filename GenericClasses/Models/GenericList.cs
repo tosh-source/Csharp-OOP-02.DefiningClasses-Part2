@@ -72,6 +72,11 @@ namespace GenericClasses.Models
             }
         }
 
+        public void FindingElement(int index)
+        {
+
+        }
+
         public IEnumerator<T> GetEnumerator()
         {
             return ((IEnumerable<T>)Elements).GetEnumerator();
