@@ -61,6 +61,7 @@ namespace GenericClasses.Models
                 }
 
                 this.Elements = tempArrOfElements;
+                currentPosition++;
             }
         }
 
