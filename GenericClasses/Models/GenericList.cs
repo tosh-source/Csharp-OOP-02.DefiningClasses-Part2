@@ -32,9 +32,27 @@ namespace GenericClasses.Models
 
         public void Remove(int index)  //Remove element by given index.
         {
-            //this.Elements[index] = default(T);  //Get default value for current T element (depend on current T instance: int, string, Point3D and so on).
+            IndexOutOfRangeExceptionHandler(index);
 
+            var tempArrOfElements = new T[Elements.Length];
 
+            //1.Copy first part of array.
+            for (int firstPartOfElements = 0; firstPartOfElements < index; firstPartOfElements++)
+            {
+                tempArrOfElements[firstPartOfElements] = Elements[firstPartOfElements];
+            }
+
+            //2.Skip the selected element.
+
+            //3.Copy second part of array.
+            for (int secondPartOfElements = Elements.Length - 1; secondPartOfElements >= index; secondPartOfElements--)
+            {
+                tempArrOfElements[secondPartOfElements + 1] = Elements[secondPartOfElements];
+            }
+
+            this.Elements = tempArrOfElements;
+
+            currentPosition--;
         }
 
         public void Insert(T elementToInsert, int startIndex)
