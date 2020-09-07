@@ -39,32 +39,27 @@ namespace GenericClasses.Models
 
         public void Insert(T elementToInsert, int startIndex)
         {
-            if (startIndex < 0 || startIndex > this.Elements.Length - 1)
+            IndexOutOfRangeExceptionHandler(startIndex);
+
+            var tempArrOfElements = new T[Elements.Length + 1]; //New Array of Elements need to be bigger than initial array of Elements with ONE.
+
+            //1.Copy first part of array.
+            for (int firstPartOfElements = 0; firstPartOfElements < startIndex; firstPartOfElements++)
             {
-                throw new IndexOutOfRangeException();
+                tempArrOfElements[firstPartOfElements] = Elements[firstPartOfElements];
             }
-            else
+
+            //2.Copy the element to insert.
+            tempArrOfElements[startIndex] = elementToInsert;
+
+            //3.Copy second part of array.
+            for (int secondPartOfElements = Elements.Length - 1; secondPartOfElements > startIndex; secondPartOfElements--)
             {
-                var tempArrOfElements = new T[Elements.Length + 1]; //New Array of Elements need to be bigger than initial array of Elements with ONE.
-
-                //1.Copy first part of array.
-                for (int firstPartOfElements = 0; firstPartOfElements < startIndex; firstPartOfElements++)
-                {
-                    tempArrOfElements[firstPartOfElements] = Elements[firstPartOfElements];
-                }
-
-                //2.Copy the element to insert.
-                tempArrOfElements[startIndex] = elementToInsert;
-
-                //3.Copy second part of array.
-                for (int secondPartOfElements = Elements.Length - 1; secondPartOfElements > startIndex; secondPartOfElements--)
-                {
-                    tempArrOfElements[secondPartOfElements + 1] = Elements[secondPartOfElements];
-                }
-
-                this.Elements = tempArrOfElements;
-                currentPosition++;
+                tempArrOfElements[secondPartOfElements + 1] = Elements[secondPartOfElements];
             }
+
+            this.Elements = tempArrOfElements;
+            currentPosition++;
         }
 
         public void Clearing()
