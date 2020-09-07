@@ -32,7 +32,9 @@ namespace GenericClasses.Models
 
         public void Remove(int index)  //Remove element by given index.
         {
-            this.Elements[index] = default(T);  //Get default value for current T element (depend on current T instance: int, string, Point3D and so on).
+            //this.Elements[index] = default(T);  //Get default value for current T element (depend on current T instance: int, string, Point3D and so on).
+
+
         }
 
         public void Insert(T elementToInsert, int startIndex)
@@ -104,6 +106,14 @@ namespace GenericClasses.Models
             private set
             {
                 this.Elements[index] = value;
+            }
+        }
+
+        private void IndexOutOfRangeExceptionHandler(int index)
+        {
+            if (index < 0 || index > this.Elements.Length - 1)
+            {
+                throw new IndexOutOfRangeException();
             }
         }
 
