@@ -34,7 +34,7 @@ namespace GenericClasses.Models
         {
             IndexOutOfRangeExceptionHandler(index);
 
-            var tempArrOfElements = new T[Elements.Length];
+            var tempArrOfElements = new T[Elements.Length - 1];
 
             //1.Copy first part of array.
             for (int firstPartOfElements = 0; firstPartOfElements < index; firstPartOfElements++)
@@ -45,9 +45,9 @@ namespace GenericClasses.Models
             //2.Skip the selected element.
 
             //3.Copy second part of array.
-            for (int secondPartOfElements = Elements.Length - 1; secondPartOfElements >= index; secondPartOfElements--)
+            for (int secondPartOfElements = Elements.Length - 1; secondPartOfElements > index; secondPartOfElements--)
             {
-                tempArrOfElements[secondPartOfElements + 1] = Elements[secondPartOfElements];
+                tempArrOfElements[secondPartOfElements - 1] = Elements[secondPartOfElements];
             }
 
             this.Elements = tempArrOfElements;
