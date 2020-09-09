@@ -129,7 +129,14 @@ namespace GenericClasses.Models
 
         public override string ToString()
         {
-            return base.ToString();
+            string result = string.Empty;
+
+            foreach (var element in Elements)
+            {
+                result += element + Environment.NewLine;
+            }
+
+            return result.ToString();
         }
     }
 }
