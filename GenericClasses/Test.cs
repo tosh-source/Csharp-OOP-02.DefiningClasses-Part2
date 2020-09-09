@@ -19,6 +19,9 @@ namespace GenericClasses
 
             genericList.Remove(1);
             Console.WriteLine(genericList);
+
+            genericList.Insert(7878, 1);
+            Console.WriteLine(genericList);
         }
     }
 }
