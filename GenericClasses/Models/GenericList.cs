@@ -71,7 +71,7 @@ namespace GenericClasses.Models
             tempArrOfElements[startIndex] = elementToInsert;
 
             //3.Copy second part of array.
-            for (int secondPartOfElements = Elements.Length - 1; secondPartOfElements > startIndex; secondPartOfElements--)
+            for (int secondPartOfElements = Elements.Length - 1; secondPartOfElements >= startIndex; secondPartOfElements--)
             {
                 tempArrOfElements[secondPartOfElements + 1] = Elements[secondPartOfElements];
             }
