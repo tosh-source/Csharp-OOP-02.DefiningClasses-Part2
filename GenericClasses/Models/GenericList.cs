@@ -19,6 +19,10 @@ namespace GenericClasses.Models
             private set { this.elements = value; }
         }
 
+        public GenericList() : this(4)
+        {
+
+        }
         public GenericList(int elementsCapacity)
         {
             this.Elements = new T[elementsCapacity];
