@@ -12,25 +12,38 @@ namespace GenericClasses
         static void Main(string[] args)
         {
             //Create new Generic List of Integers and add some items.
-            var genericList = new GenericList<int>(3);
-            genericList.Add(5);
-            genericList.Add(10);
-            genericList.Add(20);
-            Console.WriteLine(genericList);
+            var genericInts = new GenericList<int>(3);
+            genericInts.Add(5);
+            genericInts.Add(10);
+            genericInts.Add(20);
+            Console.WriteLine(genericInts);
+            //Create new Generic List of Strings and add some items.
+            var genericStrings = new GenericList<string>(4);
+            genericStrings.Add("aaa");
+            genericStrings.Add("bbb");
+            genericStrings.Add("ccc");
 
             //Test Remove method.
-            genericList.Remove(2);
-            Console.WriteLine(genericList);
-            genericList.Remove(1);
-            Console.WriteLine(genericList);
+            genericInts.Remove(2);
+            Console.WriteLine(genericInts);
+            genericInts.Remove(1);
+            Console.WriteLine(genericInts);
 
             //Test Exceptions.
             //genericList.Insert(7878, 1);  //<- uncomment to test IndexOutOfRangeException
             //genericList.Add(10);
 
             //Test Insert method.
-            genericList.Insert(7878, 0);
-            Console.WriteLine(genericList);
+            genericInts.Insert(7878, 0);
+            Console.WriteLine(genericInts);
+
+            //Test FindingElement. If return -1, there is no match!
+            Console.WriteLine("Have integer 5 at position = {0}", genericInts.FindingElement(5));
+            Console.WriteLine("Have integer 7878 at position = {0}", genericInts.FindingElement(7878));
+            Console.WriteLine("Have integer 9999 at position = {0}", genericInts.FindingElement(9999));
+
+            Console.WriteLine("Have String \"ccc\" at position = {0}", genericStrings.FindingElement("ccc"));
+            Console.WriteLine("Have String \"VVV\" at position = {0}", genericStrings.FindingElement("VVV"));
         }
     }
 }
