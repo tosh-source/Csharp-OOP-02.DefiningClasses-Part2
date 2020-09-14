@@ -94,9 +94,20 @@ namespace GenericClasses.Models
             //this.Elements = new T[this.Elements.Length];  //Above loop can be replaced with this code.
         }
 
-        public void FindingElement(T element)
+        public int FindingElement(T element)
         {
+            var result = -1;
 
+            for (int index = 0; index <= this.Elements.Length - 1; index++)
+            {
+                if (element.Equals(this.Elements[index]))
+                {
+                    Console.WriteLine(index);
+                    break;
+                }
+            }
+
+            return result;
         }
 
         public IEnumerator<T> GetEnumerator()
