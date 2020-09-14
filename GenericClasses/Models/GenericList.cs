@@ -102,7 +102,7 @@ namespace GenericClasses.Models
             {
                 if (element.Equals(this.Elements[index]))
                 {
-                    Console.WriteLine(index);
+                    result = index;
                     break;
                 }
             }
