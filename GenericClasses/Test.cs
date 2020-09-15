@@ -30,8 +30,8 @@ namespace GenericClasses
             Console.WriteLine(genericInts);
 
             //Test Exceptions.
-            //genericList.Insert(7878, 1);  //<- uncomment to test IndexOutOfRangeException
-            //genericList.Add(10);
+            //genericInts.Insert(7878, 1);  //<- uncomment to test IndexOutOfRangeException
+            //genericInts.Add(10);          //<- uncomment to test AutoGrow method
 
             //Test Insert method.
             genericInts.Insert(7878, 0);
