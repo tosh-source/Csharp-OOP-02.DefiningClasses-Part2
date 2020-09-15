@@ -112,7 +112,17 @@ namespace GenericClasses.Models
 
         private void AutoGrow()
         {
+            if (currentPosition >= this.Elements.Length - 1)
+            {
+                var tempElement = new T[(this.Elements.Length - 1) * 2];
 
+                for (int index = 0; index <= this.Elements.Length - 1; index++)
+                {
+                    tempElement[index] = this.Elements[index];
+                }
+
+                this.Elements = tempElement;
+            }
         }
 
         public IEnumerator<T> GetEnumerator()
