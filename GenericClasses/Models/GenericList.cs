@@ -110,6 +110,11 @@ namespace GenericClasses.Models
             return result;
         }
 
+        private void AutoGrow()
+        {
+
+        }
+
         public IEnumerator<T> GetEnumerator()
         {
             return ((IEnumerable<T>)Elements).GetEnumerator();
