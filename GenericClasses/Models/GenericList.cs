@@ -30,8 +30,12 @@ namespace GenericClasses.Models
 
         public void Add(T elements)
         {
+            AutoGrow();
+
             this.Elements[currentPosition] = elements;
             currentPosition++;
+
+            AutoGrow();
         }
 
         public void Remove(int index)  //Remove element by given index.
@@ -82,6 +86,8 @@ namespace GenericClasses.Models
 
             this.Elements = tempArrOfElements;
             currentPosition++;
+
+            AutoGrow();
         }
 
         public void Clearing()
