@@ -120,7 +120,7 @@ namespace GenericClasses.Models
         {
             if (currentPosition >= this.Elements.Length - 1)
             {
-                var tempElement = new T[(this.Elements.Length - 1) * 2];
+                var tempElement = new T[this.Elements.Length * 2];
 
                 for (int index = 0; index <= this.Elements.Length - 1; index++)
                 {
