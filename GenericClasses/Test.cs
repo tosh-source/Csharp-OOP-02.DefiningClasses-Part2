@@ -44,6 +44,13 @@ namespace GenericClasses
 
             Console.WriteLine("Have String \"ccc\" at position = {0}", genericStrings.FindingElement("ccc"));
             Console.WriteLine("Have String \"VVV\" at position = {0}", genericStrings.FindingElement("VVV"));
+
+            //Test Min & Max methods
+            Console.WriteLine(genericInts.Min());
+            Console.WriteLine(genericInts.Max());
+
+            Console.WriteLine(genericStrings.Min());
+            Console.WriteLine(genericStrings.Max());
         }
     }
 }
