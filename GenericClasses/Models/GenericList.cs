@@ -133,11 +133,11 @@ namespace GenericClasses.Models
 
         public T Min()
         {
-            return this.Elements.Min();  //use LINQ
+            return this.Elements.Min();  //IEnumerable<T> and LINQ is needed
         }
         public T Max()
         {
-            return this.Elements.Max();  //use LINQ
+            return this.Elements.Max();  //IEnumerable<T> and LINQ is needed
         }
 
         public IEnumerator<T> GetEnumerator()
