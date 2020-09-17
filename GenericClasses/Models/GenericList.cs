@@ -131,6 +131,15 @@ namespace GenericClasses.Models
             }
         }
 
+        public T Min()
+        {
+
+        }
+        public T Max()
+        {
+
+        }
+
         public IEnumerator<T> GetEnumerator()
         {
             return ((IEnumerable<T>)Elements).GetEnumerator();
