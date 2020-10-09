@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Matrices
 {
-    public class Matrix
+    class Matrix<T>
     {
 
     }
