@@ -51,6 +51,14 @@ namespace GenericClasses
 
             Console.WriteLine(genericStrings.Min());
             Console.WriteLine(genericStrings.Max());
+
+            //Test CompareTo() method
+            Console.WriteLine("\"aaa\" > \"ccc\" => {0}", genericStrings[0].CompareTo(genericStrings[2]));   //-1
+            Console.WriteLine("\"ccc\" > \"aaa\" => {0}", genericStrings[2].CompareTo(genericStrings[0]));   // 1
+
+            Console.WriteLine("\n\"7878\" > \"5\" => {0}", genericInts[0].CompareTo(genericInts[1]));        // 1
+            Console.WriteLine("\"5\" > \"7878\" => {0}", genericInts[1].CompareTo(genericInts[0]));          //-1
+            Console.WriteLine("\"7878\" > \"7878\" => {0}", genericInts[0].CompareTo(genericInts[0]));       //0
         }
     }
 }
