@@ -6,10 +6,8 @@ using System.Threading.Tasks;
 
 namespace Matrices
 {
-    class Program
+    public class Matrix
     {
-        static void Main(string[] args)
-        {
-        }
+
     }
 }
