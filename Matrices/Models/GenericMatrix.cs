@@ -16,5 +16,17 @@ namespace Matrices
         {
             this.Matrix = new T[rows, cols];
         }
+
+        public T this[int row, int col]
+        {
+            get
+            {
+                return this.Matrix[row, col];
+            }
+            set
+            {
+                this.Matrix[row, col] = value;
+            }
+        }
     }
 }
