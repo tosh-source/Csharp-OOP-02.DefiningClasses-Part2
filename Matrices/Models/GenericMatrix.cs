@@ -8,15 +8,57 @@ namespace Matrices.Models
 {
     class GenericMatrix<T>
     {
-        private T[,] matrix;
+        public T[,] Matrix { get; set; }
 
-        public T[,] Matrix { get; private set; }
+        public int Rows
+        {
+            get
+            {
+                return this.Matrix.GetLength(0);
+            }
+        }
+
+        public int Columns
+        {
+            get
+            {
+                return this.Matrix.GetLength(1);
+            }
+        }
 
         public GenericMatrix(int rows, int cols)
         {
             this.Matrix = new T[rows, cols];
         }
 
+        //Overload "operators for addition"
+        //public static GenericMatrix<T> operator +(GenericMatrix<T> firstMatrix, GenericMatrix<T> secondMatrix)
+        //{
+        //    GenericMatrix<T> result = new GenericMatrix<T>(firstMatrix.Rows, firstMatrix.Columns);
+
+        //    for (int rowsToSet = 0; rowsToSet < length; rowsToSet++)
+        //    {
+
+        //    }
+        //}
+
+        private void MatrixCheckerAndExceptionHandler(GenericMatrix<T> firstMatrix, GenericMatrix<T> secondMatrix)
+        {
+            if (firstMatrix.Rows != secondMatrix.Rows)
+            {
+                throw new ArgumentException("The Matrices have different rows!");
+            }
+            if (firstMatrix.Columns != secondMatrix.Columns)
+            {
+                throw new ArgumentException("The Matrices have different columns!");
+            }
+            if (firstMatrix.GetType() != secondMatrix.GetType())
+            {
+                throw new ArgumentException("The Matrices have different types of values! No kind if action can be performed of different type of matrices!");
+            }
+        }
+
+        //Indexer
         public T this[int row, int col]
         {
             get
