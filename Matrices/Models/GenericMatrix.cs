@@ -40,7 +40,7 @@ namespace Matrices.Models
             {
                 for (int colToSet = 0; colToSet < firstMatrix.Columns; colToSet++)
                 {
-                    result[rowsToSet, colToSet] = firstMatrix[rowsToSet, colToSet] + secondMatrix[rowsToSet, colToSet];
+                    result[rowsToSet, colToSet] = (dynamic)firstMatrix[rowsToSet, colToSet] + (dynamic)secondMatrix[rowsToSet, colToSet];
                 }
             }
 
