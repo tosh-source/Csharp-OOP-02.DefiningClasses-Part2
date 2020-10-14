@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Matrices.Models
 {
-    class GenericMatrix<T>
+    class GenericMatrix<T> 
     {
         public T[,] Matrix { get; set; }
 
@@ -32,15 +32,20 @@ namespace Matrices.Models
         }
 
         //Overload "operators for addition"
-        //public static GenericMatrix<T> operator +(GenericMatrix<T> firstMatrix, GenericMatrix<T> secondMatrix)
-        //{
-        //    GenericMatrix<T> result = new GenericMatrix<T>(firstMatrix.Rows, firstMatrix.Columns);
+        public static GenericMatrix<T> operator +(GenericMatrix<T> firstMatrix, GenericMatrix<T> secondMatrix)
+        {
+            GenericMatrix<T> result = new GenericMatrix<T>(firstMatrix.Rows, firstMatrix.Columns);
 
-        //    for (int rowsToSet = 0; rowsToSet < length; rowsToSet++)
-        //    {
+            for (int rowsToSet = 0; rowsToSet < firstMatrix.Rows; rowsToSet++)
+            {
+                for (int colToSet = 0; colToSet < firstMatrix.Columns; colToSet++)
+                {
+                    result[rowsToSet, colToSet] = firstMatrix[rowsToSet, colToSet] + secondMatrix[rowsToSet, colToSet];
+                }
+            }
 
-        //    }
-        //}
+            return result;
+        }
 
         private void MatrixCheckerAndExceptionHandler(GenericMatrix<T> firstMatrix, GenericMatrix<T> secondMatrix)
         {
