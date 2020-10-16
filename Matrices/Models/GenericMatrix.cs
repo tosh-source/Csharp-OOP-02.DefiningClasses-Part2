@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Matrices.Models
 {
-    class GenericMatrix<T> 
+    class GenericMatrix<T>
     {
         public T[,] Matrix { get; set; }
 
@@ -34,6 +34,8 @@ namespace Matrices.Models
         //Overload "operators for addition"
         public static GenericMatrix<T> operator +(GenericMatrix<T> firstMatrix, GenericMatrix<T> secondMatrix)
         {
+            MatrixCheckerAndExceptionHandler(firstMatrix, secondMatrix);
+
             GenericMatrix<T> result = new GenericMatrix<T>(firstMatrix.Rows, firstMatrix.Columns);
 
             for (int rowsToSet = 0; rowsToSet < firstMatrix.Rows; rowsToSet++)
@@ -47,7 +49,7 @@ namespace Matrices.Models
             return result;
         }
 
-        private void MatrixCheckerAndExceptionHandler(GenericMatrix<T> firstMatrix, GenericMatrix<T> secondMatrix)
+        private static void MatrixCheckerAndExceptionHandler(GenericMatrix<T> firstMatrix, GenericMatrix<T> secondMatrix)
         {
             if (firstMatrix.Rows != secondMatrix.Rows)
             {
@@ -57,9 +59,31 @@ namespace Matrices.Models
             {
                 throw new ArgumentException("The Matrices have different columns!");
             }
+
             if (firstMatrix.GetType() != secondMatrix.GetType())
             {
                 throw new ArgumentException("The Matrices have different types of values! No kind if action can be performed of different type of matrices!");
+            }
+
+            //Check type of matrix values.
+            if (firstMatrix.GetType() == typeof(GenericMatrix<int>))
+            {
+            }
+            else if (firstMatrix.GetType() == typeof(GenericMatrix<long>))
+            {
+            }
+            else if (firstMatrix.GetType() == typeof(GenericMatrix<float>))
+            {
+            }
+            else if (firstMatrix.GetType() == typeof(GenericMatrix<double>))
+            {
+            }
+            else if (firstMatrix.GetType() == typeof(GenericMatrix<decimal>))
+            {
+            }
+            else
+            {
+                throw new ArgumentException("The GenericMatrix need to have some ValueType as used type! Strings, chars and so on are not allowed!");
             }
         }
 
