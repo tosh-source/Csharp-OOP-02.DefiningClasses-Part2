@@ -40,9 +40,25 @@ namespace Matrices.Models
 
             for (int rowsToSet = 0; rowsToSet < firstMatrix.Rows; rowsToSet++)
             {
-                for (int colToSet = 0; colToSet < firstMatrix.Columns; colToSet++)
+                for (int colsToSet = 0; colsToSet < firstMatrix.Columns; colsToSet++)
                 {
-                    result[rowsToSet, colToSet] = (dynamic)firstMatrix[rowsToSet, colToSet] + (dynamic)secondMatrix[rowsToSet, colToSet];
+                    result[rowsToSet, colsToSet] = (dynamic)firstMatrix[rowsToSet, colsToSet] + (dynamic)secondMatrix[rowsToSet, colsToSet];
+                }
+            }
+
+            return result;
+        }
+        public static GenericMatrix<T> operator -(GenericMatrix<T> firstMatrix, GenericMatrix<T> secondMatrix)
+        {
+            MatrixCheckerAndExceptionHandler(firstMatrix, secondMatrix);
+
+            GenericMatrix<T> result = new GenericMatrix<T>(firstMatrix.Rows, firstMatrix.Columns);
+
+            for (int rowsToSet = 0; rowsToSet < firstMatrix.Rows; rowsToSet++)
+            {
+                for (int colsToSet = 0; colsToSet < firstMatrix.Columns; colsToSet++)
+                {
+                    result[rowsToSet, colsToSet] = (dynamic)firstMatrix[rowsToSet, colsToSet] - (dynamic)secondMatrix[rowsToSet, colsToSet];
                 }
             }
 
@@ -65,7 +81,7 @@ namespace Matrices.Models
                 throw new ArgumentException("The Matrices have different types of values! No kind if action can be performed of different type of matrices!");
             }
 
-            //Check type of matrix values.
+            //Check type of matrix values. Currently allowed value types of GenericMatrix are: (see below)
             if (firstMatrix.GetType() == typeof(GenericMatrix<int>))
             {
             }
