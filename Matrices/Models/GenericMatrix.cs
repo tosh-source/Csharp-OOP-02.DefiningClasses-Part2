@@ -80,6 +80,7 @@ namespace Matrices.Models
                         tempValue += (dynamic)firstMatrix[currentRow, index] * (dynamic)secondMatrix[index, currentCol];
                     }
                     result[currentRow, currentCol] = tempValue;
+                    tempValue = default(T);
                 }
             }
 
