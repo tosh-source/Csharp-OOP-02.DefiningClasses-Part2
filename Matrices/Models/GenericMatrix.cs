@@ -31,7 +31,7 @@ namespace Matrices.Models
             this.Matrix = new T[rows, cols];
         }
 
-        //Overload "operators for addition"
+        //Overload Operators.
         public static GenericMatrix<T> operator +(GenericMatrix<T> firstMatrix, GenericMatrix<T> secondMatrix)
         {
             MatrixCheckerAndExceptionHandler(firstMatrix, secondMatrix);
@@ -59,6 +59,27 @@ namespace Matrices.Models
                 for (int colsToSet = 0; colsToSet < firstMatrix.Columns; colsToSet++)
                 {
                     result[rowsToSet, colsToSet] = (dynamic)firstMatrix[rowsToSet, colsToSet] - (dynamic)secondMatrix[rowsToSet, colsToSet];
+                }
+            }
+
+            return result;
+        }
+        public static GenericMatrix<T> operator *(GenericMatrix<T> firstMatrix, GenericMatrix<T> secondMatrix)
+        {
+            MatrixCheckerAndExceptionHandler(firstMatrix, secondMatrix);
+
+            var result = new GenericMatrix<T>(firstMatrix.Rows, firstMatrix.Columns);
+            var tempValue = default(T);
+
+            for (int currentRow = 0; currentRow < firstMatrix.Rows; currentRow++)
+            {
+                for (int currentCol = 0; currentCol < firstMatrix.Columns; currentCol++)
+                {
+                    for (int index = 0; index < firstMatrix.Columns; index++)
+                    {
+                        tempValue += (dynamic)firstMatrix[currentRow, index] * (dynamic)secondMatrix[index, currentCol];
+                    }
+                    result[currentRow, currentCol] = tempValue;
                 }
             }
 
