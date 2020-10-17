@@ -36,7 +36,7 @@ namespace Matrices.Models
         {
             MatrixCheckerAndExceptionHandler(firstMatrix, secondMatrix);
 
-            GenericMatrix<T> result = new GenericMatrix<T>(firstMatrix.Rows, firstMatrix.Columns);
+            var result = new GenericMatrix<T>(firstMatrix.Rows, firstMatrix.Columns);
 
             for (int rowsToSet = 0; rowsToSet < firstMatrix.Rows; rowsToSet++)
             {
@@ -52,7 +52,7 @@ namespace Matrices.Models
         {
             MatrixCheckerAndExceptionHandler(firstMatrix, secondMatrix);
 
-            GenericMatrix<T> result = new GenericMatrix<T>(firstMatrix.Rows, firstMatrix.Columns);
+            var result = new GenericMatrix<T>(firstMatrix.Rows, firstMatrix.Columns);
 
             for (int rowsToSet = 0; rowsToSet < firstMatrix.Rows; rowsToSet++)
             {
