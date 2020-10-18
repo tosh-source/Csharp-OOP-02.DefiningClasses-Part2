@@ -26,6 +26,9 @@ namespace Matrices
 
             var result = genericMatrix * secondGenericMatrix;
             Console.WriteLine(result);
+            //printed result of matrix multiplication
+            //19 22
+            //43 50
         }
     }
 }
