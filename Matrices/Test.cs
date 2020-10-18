@@ -25,6 +25,7 @@ namespace Matrices
             secondGenericMatrix[1, 1] = 8;
 
             var result = genericMatrix * secondGenericMatrix;
+            Console.WriteLine(result);
         }
     }
 }
