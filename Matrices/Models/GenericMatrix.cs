@@ -137,5 +137,21 @@ namespace Matrices.Models
                 this.Matrix[row, col] = value;
             }
         }
+
+        public override string ToString()
+        {
+            var result = new StringBuilder();
+
+            for (int rowToPrint = 0; rowToPrint < this.Matrix.GetLength(0); rowToPrint++)
+            {
+                for (int colToPrint = 0; colToPrint < this.Matrix.GetLength(1); colToPrint++)
+                {
+                    result.Append(string.Format("{0,5}", this.Matrix[rowToPrint, colToPrint]));  //or use .AppendFormat() is combination of: .Append(string.Format())
+                }
+                result.AppendLine();
+            }
+
+            return result.ToString();
+        }
     }
 }
