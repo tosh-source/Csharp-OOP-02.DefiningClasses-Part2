@@ -31,7 +31,7 @@ namespace Matrices.Models
             this.Matrix = new T[rows, cols];
         }
 
-        //Overload Operators.
+        //Overload arithmetical operators.
         public static GenericMatrix<T> operator +(GenericMatrix<T> firstMatrix, GenericMatrix<T> secondMatrix)
         {
             MatrixCheckerAndExceptionHandler(firstMatrix, secondMatrix);
@@ -85,6 +85,42 @@ namespace Matrices.Models
             }
 
             return result;
+        }
+
+        //Overloaded operators true/false will check for non-zero elements.
+        public static bool operator true(GenericMatrix<T> genericMatrix)
+        {
+            bool haveZero = false;
+
+            for (int rowsToCheck = 0; rowsToCheck < genericMatrix.Rows; rowsToCheck++)
+            {
+                for (int colsToCheck = 0; colsToCheck < genericMatrix.Columns; colsToCheck++)
+                {
+                    if (genericMatrix[rowsToCheck, colsToCheck].Equals(default(T)))
+                    {
+                        haveZero = true;
+                    }
+                }
+            }
+
+            return haveZero;
+        }
+        public static bool operator false(GenericMatrix<T> genericMatrix)
+        {
+            bool haveZero = true;
+
+            for (int rowsToCheck = 0; rowsToCheck < genericMatrix.Rows; rowsToCheck++)
+            {
+                for (int colsToCheck = 0; colsToCheck < genericMatrix.Columns; colsToCheck++)
+                {
+                    if (!(genericMatrix[rowsToCheck, colsToCheck].Equals(default(T))))
+                    {
+                        haveZero = false;
+                    }
+                }
+            }
+
+            return haveZero;
         }
 
         private static void MatrixCheckerAndExceptionHandler(GenericMatrix<T> firstMatrix, GenericMatrix<T> secondMatrix)
