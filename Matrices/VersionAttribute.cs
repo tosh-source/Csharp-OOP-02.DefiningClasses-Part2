@@ -12,10 +12,17 @@ namespace Matrices
 
         public int Minor { get; set; }
 
-        public VersionAttribute(int major, int minor)
+        public VersionAttribute(int majorVersion, int minorVersion)
         {
-            this.Major = major;
-            this.Minor = minor;
+            this.Major = majorVersion;
+            this.Minor = minorVersion;
+        }
+
+        public override string ToString()
+        {
+            string result = $"Program version {Major}.{Minor}";
+
+            return result;
         }
     }
 }
