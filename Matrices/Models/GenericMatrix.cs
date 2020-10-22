@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 
 namespace Matrices.Models
 {
+    [Version(1, 00)]
     class GenericMatrix<T>
     {
         public T[,] Matrix { get; set; }

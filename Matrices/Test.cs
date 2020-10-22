@@ -26,9 +26,14 @@ namespace Matrices
 
             var result = genericMatrix * secondGenericMatrix;
             Console.WriteLine(result);
-            //printed result of matrix multiplication
+            //Expected result of matrix multiplication
             //19 22
             //43 50
+
+            //Print Attributes
+            Type type = typeof(GenericMatrix<Type>);
+            var allAttributes = type.GetCustomAttributes(false);
+            Console.WriteLine(string.Join(Environment.NewLine, allAttributes));
         }
     }
 }
