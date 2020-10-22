@@ -1,31 +1,21 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System;  //needed for class Attribute
 
 namespace Matrices
 {
     [AttributeUsage(AttributeTargets.Struct |
-      AttributeTargets.Class | AttributeTargets.Interface,
-      AllowMultiple = true)]
+      AttributeTargets.Class | AttributeTargets.Interface |
+      AttributeTargets.Enum | AttributeTargets.Method)]
 
-
-    public class AuthorAttribute : System.Attribute
-
+    public class VersionAttribute : Attribute
     {
+        public int Major { get; private set; }
 
-        public string Name { get; private set; }
+        public int Minor { get; set; }
 
-
-
-        public AuthorAttribute(string name)
-
+        public VersionAttribute(int major, int minor)
         {
-
-            this.Name = name;
-
+            this.Major = major;
+            this.Minor = minor;
         }
-
     }
 }
