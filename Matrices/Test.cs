@@ -31,8 +31,8 @@ namespace Matrices
             //43 50
 
             //Print Attributes
-            Type type = typeof(GenericMatrix<Type>);
-            var allAttributes = type.GetCustomAttributes(false);
+            Type matrixType = typeof(GenericMatrix<Type>);
+            var allAttributes = matrixType.GetCustomAttributes(false);  //matrixType return type is "object[]".
             Console.WriteLine(string.Join(Environment.NewLine, allAttributes));
         }
     }
