@@ -30,6 +30,31 @@ namespace Matrices
             //19 22
             //43 50
 
+            //Test overloaded true/false operator
+            var newGenericMatrix = new GenericMatrix<int>(2, 2);
+            genericMatrix[0, 0] = 0;
+            genericMatrix[0, 1] = 0;
+            genericMatrix[1, 0] = 3;
+            genericMatrix[1, 1] = 4;
+
+            if (newGenericMatrix)
+            {
+                Console.WriteLine("There is zero values in the Matrix!");
+            }
+            else 
+            {
+                Console.WriteLine("There is NO zero values in the Matrix!");
+            }
+
+            if (result)
+            {
+                Console.WriteLine("There is zero values in the Matrix!");
+            }
+            else
+            {
+                Console.WriteLine("There is NO zero values in the Matrix!");
+            }
+
             //Print Attributes
             Type matrixType = typeof(GenericMatrix<Type>);
             var allAttributes = matrixType.GetCustomAttributes(false);  //matrixType return type is "object[]".
